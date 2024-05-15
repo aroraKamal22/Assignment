@@ -4,8 +4,151 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body {
+            background-color: #c7e4f9; 
+            font-family: Arial, sans-serif; 
+        }
+
+        form {
+            max-width: 500px; 
+            margin: 0 auto;
+            padding: 30px; 
+            background-color: #c7e4f9; 
+            border-radius: 5px; 
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
+            border: 8px solid rgb(255, 182, 194); 
+        }
+
+        legend {
+            font-size: 1em; 
+            font-weight: bold; 
+            text-align: center;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: green;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: darkgreen;
+        }
+
+        hr {
+            border: none;
+            height: 2px;
+            background-color: white;
+            margin: 20px 0;
+        }
+    </style>
+
+    <script>
+        function validateForm() {
+            var a = document.getElementById("n1").value;
+            var b = document.getElementById("n3").value;
+            var c = document.getElementById("n5").value;
+            var d = document.getElementById("n6").value;
+            var e = document.getElementById("n7").value;
+            var f = document.getElementById("n8").value;
+
+            if (a == "" || b == "" || c == "" || d == "" || e == "" || f == "") {
+                alert("All fields are mandatory");
+                return false;
+            }
+
+            // Check if passwords match
+            if (e !== f) {
+                alert("Passwords do not match");
+                return false;
+            }
+            return true;
+        }
+    </script>
 </head>
 <body>
-    <h1>Your form is submitted</h1>
+    <form onsubmit="return validateForm()" action="index.html">
+        <legend>
+            <h1>Student Registration Form</h1>
+        </legend>
+        <hr>
+        <div>
+            <label for="fname">Firstname</label><br>
+            <input type="text" name="fname" placeholder="Firstname" id="n1" required><br>
+        </div>
+        <br>
+        <div>
+            <label for="mname">Middlename</label><br>
+            <input type="text" name="mname" placeholder="Middlename"><br>
+        </div>
+        <br>
+        <div>
+            <label for="lname">Lastname</label><br>
+            <input type="text" name="lname" placeholder="Lastname" id="n3" required><br>
+        </div>
+        <br>
+        <div>
+            <label for="course">Course:</label>
+            <select name="course">
+                <option value="Course">Course</option>
+                <option value="Java">Java</option>
+                <option value="HTML">HTML</option>
+                <option value="CSS">CSS</option>
+            </select>
+        </div>
+        <br>
+        <div>
+            <label for="gender">Gender:</label><br>
+            <input type="radio" name="gender" value="male">MALE
+            <input type="radio" name="gender" value="female">FEMALE
+            <input type="radio" name="gender" value="other">OTHER
+        </div>
+        <br>
+        <div>
+            <label for="phone">Phone:</label><br>
+            <input type="text" id="phone" name="phone" placeholder="+91" required><br>
+            <input type="text" id="phone" name="phone" placeholder="phone no" id="n5"><br>
+        </div>
+        <br>
+        <div>
+            <label for="address">Current Address:</label><br>
+            <textarea name="address" rows="5" cols="50" placeholder="Current Address" required></textarea><br>
+        </div>
+        <br>
+        <div>
+            <label for="email">Email</label><br>
+            <input type="email" name="email" placeholder="Enter Email" id="n6" required><br>
+        </div>
+        <br>
+        <div>
+            <label for="pwd">Password</label><br>
+            <input type="password" id="pwd" name="pwd" placeholder="Enter Password" id="n7" required>
+        </div>
+        <br>
+        <div>
+            <label for="confirmPwd">Re-type Password</label><br>
+            <input type="password" id="confirmPwd" name="confirmPwd" placeholder="Re-type Password" id="n8" required><br><br>
+        </div>
+        <div>
+            <button type="submit">Register</button>
+        </div>
+    </form>
 </body>
 </html>
