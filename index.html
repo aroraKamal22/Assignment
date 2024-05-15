@@ -24,11 +24,10 @@
             font-weight: bold; 
         }
 
-
         input[type="text"],
         input[type="password"],
         input[type="email"],
-        select,
+        
         textarea {
             width: 100%;
             padding: 10px;
@@ -63,88 +62,74 @@
             </legend>
             <div>
                 <label for="fname">Firstname</label><br>
-                <input type="text" name="fname" value="Firstname"><br>
+                <input type="text" name="fname" placeholder="Firstname"><br>
             </div>
             <br>
             <div>
                 <label for="mname">Middlename</label><br>
-                <input type="text" name="mname" value="Middlename"><br>
+                <input type="text" name="mname" placeholder="Middlename"><br>
             </div>
             <br>
             <div>
                 <label for="lname">Lastname</label><br>
-                <input type="text" name="lname" value="Lastname"><br>
+                <input type="text" name="lname" placeholder="Lastname"><br>
             </div>
             <br>
 
             <div>
-                Course : 
-                <select name="drop-down">
+                <label for="course">Course:</label>
+                <select name="course" >
                     <option value="C++">C++</option>
                     <option value="Java">Java</option>
                     <option value="HTML">HTML</option>
                     <option value="CSS">CSS</option>
-                    
                 </select>
             </div>
             <br>
 
             <div>
-                Gender:<br> MALE<input type="radio" name="my Gender">
-                FEMALE<input type="radio" name="my Gender">
-                OTHER<input type="radio" name="my Gender">
+                <label for="gender">Gender:</label><br>
+                <input type="radio" name="gender" value="male">MALE
+                <input type="radio" name="gender" value="female">FEMALE
+                <input type="radio" name="gender" value="other">OTHER
             </div>
             <br>
 
             <div>
                 <label for="phone">Phone:</label><br>
                 <input type="text" id="phone" name="phone" placeholder="+91"><br>
-                <input type="text" id="phone" name="phone" value="phone no"><br>
-
-
             </div>
             <br>
             
             <div>
-                <form>
-                    Current Address:<br>
-
-                    <textarea name="message" rows="5"  cols="50">Current Address</textarea><br>
-
-                </form>
+                <label for="address">Current Address:</label><br>
+                <textarea name="address" rows="5" cols="50" placeholder="Current Address"></textarea><br>
             </div>
-
             <br>
 
             <div>
                 <label for="email">Email</label><br>
-                <input type="email" name="email" value="Enter Email"><br>
+                <input type="email" name="email" placeholder="Enter Email"><br>
             </div>
             <br>
-            
             
             <div>
                 <label for="pwd">Password</label><br>
-                <input type="password" id="pwd" name="pwd" value="Enter Password">
+                <input type="password" id="pwd" name="pwd" placeholder="Enter Password">
             </div>
             <br>
 
             <div>
-                <label for="pwd">Re-type Password</label><br>
-                <input type="password" id="pwd" name="pwd" value=" Re-type Password"><br><br>
+                <label for="confirmPwd">Re-type Password</label><br>
+                <input type="password" id="confirmPwd" name="confirmPwd" placeholder="Re-type Password"><br><br>
             </div>
-            
-
-           
             
             <div>
                 <button type="button">Register</button>
             </div>
         </fieldset>
     </form>
-
-
-    
 </body>
 </html>
+
 
